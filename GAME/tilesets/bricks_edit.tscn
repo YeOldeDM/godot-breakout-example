@@ -1,0 +1,221 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://assets/graphics/bricks.png" type="Texture" id=1]
+
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -8, -4, 8, -4, 8, 4, -8, 4 )
+
+[node name="Node" type="Node"]
+
+[node name="Red" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 0, 16, 8 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Red"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Red/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -8, -4, 8, -4, 8, 4, -8, 4 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Green" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 16, 0, 16, 8 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Green"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Green/StaticBody2D1"]
+
+build_mode = 0
+polygon = Vector2Array( -8, -4, 8, -4, 8, 4, -8, 4 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Blue" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 0, 16, 8 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Blue"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blue/StaticBody2D2"]
+
+build_mode = 0
+polygon = Vector2Array( -8, -4, 8, -4, 8, 4, -8, 4 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Yellow" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 48, 0, 16, 8 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Yellow"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Yellow/StaticBody2D3"]
+
+build_mode = 0
+polygon = Vector2Array( -8, -4, 8, -4, 8, 4, -8, 4 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Magenta" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 8, 16, 8 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Magenta"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Magenta/StaticBody2D4"]
+
+build_mode = 0
+polygon = Vector2Array( -8, -4, 8, -4, 8, 4, -8, 4 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Orange" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 16, 8, 16, 8 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Orange"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Orange/StaticBody2D5"]
+
+build_mode = 0
+polygon = Vector2Array( -8, -4, 8, -4, 8, 4, -8, 4 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Steel" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 8, 16, 8 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Steel"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Steel/StaticBody2D6"]
+
+build_mode = 0
+polygon = Vector2Array( -8, -4, 8, -4, 8, 4, -8, 4 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Lead" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 48, 8, 16, 8 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Lead"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lead/StaticBody2D7"]
+
+build_mode = 0
+polygon = Vector2Array( -8, -4, 8, -4, 8, 4, -8, 4 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+
