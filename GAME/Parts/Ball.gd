@@ -4,7 +4,7 @@ onready var SFX = get_node("SFX")
 
 var dir = Vector2(0,-1)
 
-var speed = 160
+var speed = 180
 
 
 func reset():
@@ -14,38 +14,43 @@ func reset():
 	
 
 func go():
-	dir = Vector2(0,-1)
+	dir = Vector2( rand_range( -0.25, 0.25 ), -1 )
 	set_fixed_process(true)
 
 
-func _ready():
-	pass
-
 
 func _fixed_process(delta):
-	dir.y = 80 * sign(dir.y)
-	var motion = move( dir.normalized()*speed*delta )
+	# Clamp vertical velocity. Keeps the ball from going too "horizontal"
+	dir.y = 80 * sign( dir.y )
 	
+	# Move in the direction at speed
+	var motion = move( dir.normalized() * speed * delta )
+	
+	# Collision Handling
 	if is_colliding():
 		var col = get_collider()
+		
+		# SFX/Animation triggers
 		if col extends TileMap:
-			SFX.play("ping_brick")
-		elif col.is_in_group("PADDLE"):
-			SFX.play("ping_paddle")
-			col.get_node("Animator").play("bump")
+			SFX.play( "ping_brick" )
+		elif col.is_in_group( "PADDLE" ):
+			SFX.play( "ping_paddle" )
+			col.get_node( "Animator").play( "bump" )
 		else:
 			SFX.play("ping_wall")
+			
+		# Get Brick map colliding cell (when hitting bricks)
 		var m = get_collider_metadata()
 		if typeof(m) == TYPE_VECTOR2:
-			# Hit a Brick!
-#			prints("HIT BRICK ",m)
+			# If we hit a brick..
 			get_node("/root/Main").on_Ball_hit_brick( m )
-		var n = get_collision_normal()
 		
+		#Recalculate direction when we bounce
+		var n = get_collision_normal()
 		if col.is_in_group("PADDLE"):
-			var x_diff = (get_pos().x - col.get_pos().x)
-			dir = Vector2(x_diff * 5,-1)
+			var x_diff = get_pos().x - col.get_pos().x
+			dir = Vector2( x_diff * 5, -1 )
 		else:
 			dir = n.reflect( dir )
-#		move( motion )
+
 
