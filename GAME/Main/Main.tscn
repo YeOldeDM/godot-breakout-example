@@ -250,23 +250,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="ExtraLifeScoreLabel" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 96.0
-margin/top = 0.0
-margin/right = 120.0
-margin/bottom = 8.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.742188, 0.0695801, 0.0695801, 1 )
-text = "1UP"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="Score" type="Label" parent="."]
 
 focus/ignore_mouse = true
@@ -298,24 +281,6 @@ margin/bottom = 16.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "9001"
-align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="ExtraLifeScore" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 80.0
-margin/top = 8.0
-margin/right = 128.0
-margin/bottom = 16.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "--"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0

@@ -3,11 +3,10 @@
 [ext_resource path="res://Parts/Paddle.gd" type="Script" id=1]
 [ext_resource path="res://assets/graphics/paddle.png" type="Texture" id=2]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -16, 1, -10, -3, -2, -4, 2, -4, 10, -3, 16, 1, 16, 4, -16, 4 )
+points = Vector2Array( -16, -4, 16, -4, 0, -1 )
 
 [sub_resource type="Animation" id=2]
 
@@ -51,7 +50,7 @@ transform/pos = Vector2( 0, -7 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
 build_mode = 0
-polygon = Vector2Array( -16, 1, -10, -3, -2, -4, 2, -4, 10, -3, 16, 1, 16, 4, -16, 4 )
+polygon = Vector2Array( -16, -4, 16, -4, 0, -1 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 

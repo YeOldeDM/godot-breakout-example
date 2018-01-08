@@ -42,6 +42,10 @@ func _fixed_process(delta):
 			get_node("/root/Main").on_Ball_hit_brick( m )
 		var n = get_collision_normal()
 		
-		dir = n.reflect( dir )
+		if col.is_in_group("PADDLE"):
+			var x_diff = (get_pos().x - col.get_pos().x)
+			dir = Vector2(x_diff * 5,-1)
+		else:
+			dir = n.reflect( dir )
 #		move( motion )
 
