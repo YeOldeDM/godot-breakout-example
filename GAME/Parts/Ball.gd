@@ -23,7 +23,7 @@ func _ready():
 
 
 func _fixed_process(delta):
-	
+	dir.y = 80 * sign(dir.y)
 	var motion = move( dir.normalized()*speed*delta )
 	
 	if is_colliding():

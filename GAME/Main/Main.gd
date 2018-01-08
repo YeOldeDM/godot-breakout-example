@@ -36,7 +36,7 @@ func _on_KillZone_body_enter( body ):
 		self.extra_lives -= 1
 		if self.extra_lives < 0:
 			emit_signal("game_over")
-		call_deferred("reset_ball")
+		reset_ball()
 
 
 
